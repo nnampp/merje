@@ -1,0 +1,115 @@
+
+/*--------admin-promo----------*/
+textarea {
+  resize: none;
+}
+
+.all-in-promation{
+  width: 100%;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+}
+.all-in-promation h2{
+  font-weight: 600;
+font-size: 70px;
+line-height: 24px;
+  color: #72644E;
+  text-align:center;
+}
+
+.detail-promotion{
+    margin: auto;
+    width: 600px;
+    background: #ECE7E1;
+    padding: 15px;
+    border-radius: 25px;
+    margin-top: 5%;
+}
+.detail-promotion h1{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 24px;
+}
+.input-box{
+  width: 100%;
+  height: 56px;
+  border: 1px solid rgba(17, 17, 17, 0.5);
+  border-radius: 8px;
+}
+.discount-available{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+}
+.available input{
+  height: 56px;
+  border: 1px solid rgba(17, 17, 17, 0.5);
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 0 15px;
+}
+.detail-promo-content textarea{
+  border: 1px solid rgba(17, 17, 17, 0.5);
+  border-radius: 8px;
+   font-size: 16px;
+  padding: 10px 5px;
+}
+.Percentage{
+  margin: 5px 0;
+}
+
+.Discount input[type=text]{
+  border: none;
+  background:none;
+  border-bottom: 1px solid #000000;
+  height: 20px;
+  width: 40%;
+  padding: 0 5px;
+  font-size: 18px;
+}
+.Discount h1{
+  margin: 5px 0;
+}
+.title-available {
+  margin: 5px 0;
+}
+.Discount input[type=text]:focus{
+  outline: none;
+}
+.name-code input{
+  padding: 0 10px;
+  font-size: 18px;
+}
+.discount-available  input[type=radio]:hover{
+  cursor:pointer;
+}
+.form{
+  position: relative;
+}
+.form_input{
+  position:absolute;
+  opacity:0;
+  width: 1px;
+  height:0px;
+  visibility:hidden;
+}
+.form_label{
+  background:#8F7D5E;
+  cursor:pointer;
+  border-radius: 8px;
+   padding: 10px 20px;
+  color:#ffffff;
+}
+
+#file-name{
+  padding: 0 15px;
+}
+#img-calender{
+  position:absolute;
+  right: 35%;
+}

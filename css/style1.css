@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(291.31deg, rgba(143, 125, 94, 0.8) 8.68%, rgba(220, 212, 179, 0.8) 90.18%);
+
+}
+
+.Card{
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+    padding-top: 55px;
+}
+
+.card-container{
+    background: #FFFFFF;
+    border: 1px solid #DFE0EB;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 380px;
+    height: 582px; 
+    padding-top: 25px;
+}
+.card-header img{
+    width: 223px;
+    height: 124px;
+}
+.card-header{
+margin: 0;
+padding-bottom: 30px;
+}
+
+.card-header h2{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #999186;
+    opacity: 0.7;
+    padding-bottom: 7px;
+}
+.card-header h1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #72644E;
+}
+.card-header p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #979797;
+    padding-top: 6px;
+}
+.login-component {
+    padding-bottom: 20px;
+}
+
+.staffid h1{
+    margin-right: 250px;
+    padding-bottom: 6px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #72644E;
+}
+.staffid .Email{
+    width: 300px;
+    height: 42px;
+    padding-left: 15px;
+    background: #FCFDFE;
+    border: 1px solid #aeafb5;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    opacity: 0.6;
+}
+input[type=email]:focus {
+    border: 3px solid #72644E;
+}
+.Password{
+    padding-bottom: 24px;
+    width: 300px;
+    margin-left: 40px;
+    
+}
+.pass-title{
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.pass-title h1{
+    padding-bottom: 6px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: #72644E;   
+}
+.pass-title a{
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    text-align: right;
+    letter-spacing: 0.1px;
+    color: #72644E;
+}
+.password-box{
+    width: 300px;
+    height: 42px;
+    padding-left: 15px;
+    background: #FCFDFE;
+    border: 1px solid #aeafb5;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    opacity: 0.6;
+    outline: none;  
+}
+input[type=password]:focus {
+    border: 3px solid #72644E;
+}
+.pass-box{
+    position:absolute;
+   
+}
+.pass-box i{
+    position: absolute;
+    left: 88%;
+    top: 30%;
+    opacity: 0.4;
+}
+.login-button{
+  margin-top: 40px;
+    background: #E1B0B0;
+    box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+    border-radius: 8px;
+    width: 316px;
+    height: 48px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: #FCFDFE;
+}
+.login-button:active {
+    background-color: #cb9b9b;
+    transform: translateY(2px);
+}
+

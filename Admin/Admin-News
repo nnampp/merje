@@ -1,0 +1,193 @@
+<?php
+  $con=mysqli_connect("localhost","a5_test1","merje5","a5_test1");
+  // Check connection
+  if (mysqli_connect_errno()) {
+  	echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+	session_start();
+?> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERJE</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/image%203.png?v=1650035975678">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+</head>
+  <body>
+    <header class = "Navbar">
+      <div class = "Navbar-container">
+        <div class ="Menu">
+           <div class ="logo">
+            <img src = "https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/image%203.png?v=1650035975678"/>
+          </div>
+            <div class ="Menu-content">
+              <ul class="nav">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#theater">THEATER</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#promotions">PROMOTIONS</a></li>
+                <li><a href="#faq">FAQ</a></li> 
+                <li><img src = "https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/_______________2565_02_04______20_55_1.png?v=1650037162676" height="78" width="125"/></li>
+              </ul>
+            </div>
+            <div class ="Search-Profile">
+              <div class = "Search">
+                <input type="search" class="search-box" placeholder="Search">
+                <img src = "https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/Vector_16.png?v=1650040678922" height="20" width="20"/>
+              </div>
+              <div class = "Profile">
+                 <img onclick="openForm()" src = "https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/275290341_1406417199817189_5767133339777551664_n%207.png?v=1650040748846"/>
+              </div>
+            </div>
+        </div>
+      </div>
+    </header>
+    
+    
+      
+  <?php
+        if(isset($_POST['submitsignin'])){ //check if form was submitted
+            $_SESSION['submitsignin'] = $_POST['submitsignin'];
+            $_SESSION['email'] = $_POST['email']; //get input text
+            $_SESSION['password'] = $_POST['password'];
+        }
+
+    	$sql = "SELECT * FROM Register WHERE Email = '".$_SESSION['email']."' AND Password = '".$_SESSION['password']."' ";
+          	$result = mysqli_query($con,$sql);
+          
+          	if(mysqli_num_rows($result)==1) {
+              $row = mysqli_fetch_array($result);
+              $_SESSION['RegisterID'] = $row['RegisterID'];
+              $_SESSION['Name'] = $row['Name'];
+        }
+    
+        if(isset($_POST['submitsignout'])) {
+            session_unset();
+            session_destroy();
+        }
+        ?>
+  
+ <div class="form-popup" id="myForm">
+  <form class="form-container" method="POST">
+    <?php 
+      if(isset($_SESSION['RegisterID'])) {
+        echo "<br>&nbsp;&nbsp;&nbsp;You're signed in !!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+        echo $_SESSION['Name'];
+        echo "<br><br>";
+        echo "<div class=\"pls\">";
+        echo "<button type=\"submit\" class=\"btn\" name=\"submitsignout\">sign out</button>
+                <button type=\"button\" class=\"btn cancel\" name=\"cancel\" onclick=\"closeForm();\">Cancel</button>
+            </div>";
+      }
+      else {
+        echo "<input type=\"Email\" class=\"LoginBox\" placeholder=\"Email\" name=\"email\" required>";
+        echo "<input type=\"Password\" class=\"LoginBox\" placeholder=\"Password\" name=\"password\" required>";
+        echo "<div class=\"pls\">";
+        echo "<button type=\"submit\" class=\"btn\" name=\"submitsignin\">sign in</button>
+                <a href=\"register.php\"><button type=\"button\" class=\"btn cancel\" >Register</button></a>
+                <button type=\"button\" class=\"btn cancel\" name=\"cancel\" onclick=\"closeForm();\">Cancel</button>
+            </div>";
+        if(isset($_SESSION['submitsignin']))
+          echo "<script> alert(\"Email or Password is incorrect\"); </script>";
+      		session_unset();
+      }
+
+    ?>
+  </form>
+</div>
+    
+    
+    
+ <div class="news">
+  <div class="news-line">
+     <div class="news-left">
+       <div class= "title1">
+          <h1> ข่าวภาพยนต์ </h1>        
+       </div>
+       <img src="https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/image%20110.png?v=1650277139006" alt="news1" height="479" width="884">
+       <div class= "topic-btn">
+          <h2>
+            จับมือเผชิญหน้าความสยอง ร้องเพลงเชียร์สุดหลอนไปด้วยกัน!
+          </h2>
+          <div class= "next-btn">
+            <img src="https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/Group%2012.png?v=1650130199967" height="40" width="40">
+         </div>
+       </div>
+      
+     </div>
+     
+    <div class="news-right">
+       <div class= "title2">
+          <h1> ข่าวเเละกิจกรรม </h1>        
+       </div>
+       <img src="https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/image%20111.png?v=1650284026894" alt="news1" height="479" width="421">
+       <div class= "topic-btn">
+          <h2>
+            MERJE HORROR .......
+          </h2>
+          <div class= "next-btn">
+            <img src="https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/Group%2012.png?v=1650130199967" height="40" width="40">
+         </div>
+       </div>
+      
+    </div> 
+  </div>
+   
+  <br><br> 
+  <div class="news-line">
+  <div class="news-left">  
+    <div class= "title1">
+          <h1> ข่าวภาพยนต์ </h1>        
+       </div>
+       <img src="https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/image%20112.png?v=1650284373379" alt="news1" height="906" width="1339">
+       <div class= "topic-btn">
+          <h2>
+            คริส ไพน์ นำทัพตัวท็อปนักแสดงขยี้ดราม่าแอ็คชั่นสุดเดือดใน The Contractor........
+          </h2>
+          <div class= "next-btn">
+            <img src="https://cdn.glitch.global/c4abddf4-df42-4a5d-9919-6041695585c5/Group%2012.png?v=1650130199967" height="40" width="40">
+         </div>
+       </div>
+    </div>
+  </div>
+   
+    
+    
+    
+    
+    
+    
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <br><br><br><br><br>
+    
+    
+    
+    <footer>
+      <p>COPYRIGHT RESERVED © 2019 MERJE CINEMA GROUP PLC. ALL RIGHTS RESERVED.</p>
+      
+    </footer>
+    
+  </body>
+</html>
